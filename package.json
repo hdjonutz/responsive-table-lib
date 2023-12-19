@@ -1,0 +1,49 @@
+{
+  "name": "@hdjonutz/responsive-table",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^16.2.0",
+    "@angular/core": "^16.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "module": "fesm2022/responsive-table.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/responsive-table.mjs",
+      "esm": "./esm2022/responsive-table.mjs",
+      "default": "./fesm2022/responsive-table.mjs"
+    }
+  },
+  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdjonutz/responsive-table.git"
+  },
+  "keywords": [
+    "responsive-table",
+    "angular",
+    "responsive",
+    "table"
+  ],
+  "author": "hdjonutz",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/hdjonutz/responsive-table/issues"
+  },
+  "homepage": "https://github.com/hdjonutz/responsive-table#readme"
+}
