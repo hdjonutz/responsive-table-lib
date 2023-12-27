@@ -1,24 +1,60 @@
-# ResponsiveTable
+# table-responsive-app & table-responsive-lib
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
-## Code scaffolding
+![img.png](readme_dir/img.png)
 
-Run `ng generate component component-name --project responsive-table` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project responsive-table`.
-> Note: Don't forget to add `--project responsive-table` or else it will be added to the default project in your `angular.json` file. 
+## Config
+````agsl
+config: IResponsiveTableConfig = {
+    showCheckHeader:  true,                           // ---------NOT IMPLEMENTED
+    onSelectRow:      Function,          // onClickRow -> implicit selected
+    displayTableName: true,
+    displayFooter:    true,
+    // headerHeight:     50,        // default auto
+    footerHeight:     60,           // default 50
+    rowHeight:        40,           // default 50 ---------NOT IMPLEMENTED
 
-## Build
+    showLoading:      true,
+    scrollV:          true,         // not implemented DEFAULT
+    scrollH:          false,        // ---------NOT IMPLEMENTED
+    language:         'de',
+    messageTableNoData: 'There are no data to display!',
 
-Run `ng build responsive-table` to build the project. The build artifacts will be stored in the `dist/` directory.
+    selectionType: SelectionType.multi,         // ---------NOT IMPLEMENTED
+  };
+````
 
-## Publishing
+````agsl
+<lib-table-responsive
+        class="material expandable virtualized"
+        [rows]="dataStruct.data"
+        [config]="config"
+        [selected]="selected"
+        [droggableColumns]="false"  <--! not implemented -->
+        [droggableRows]="true"
+      >
+        <lib-table-responsive-column key="checkbox" name="" [width]="50" [maxWidth]="50" [minWidth]="50"
+                                     [headerTemplate]="checkbox_header_Template"
+                                     [cellTemplate]="checkbox_cell_Template">
+        </lib-table-responsive-column>
 
-After building your library with `ng build responsive-table`, go to the dist folder `cd dist/responsive-table` and run `npm publish`.
+        <ng-container *ngFor="let structEl of structureElem.atts;">
+          <lib-table-responsive-column key="{{structEl.key}}" name="{{structEl.name}}" [style]="getStyle(structEl.key)">
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" lib-table-responsive-cell-template>
+              <div [style]="hasCustomStyle(structEl.key, row)">{{row[structEl.key]}}</div>
+            </ng-template>
+          </lib-table-responsive-column>
+        </ng-container>
 
-## Running unit tests
+        <lib-table-responsive-column key="" name="" [width]="100" [maxWidth]="100" [minWidth]="100"
+                                     [headerTemplate]="right_header_Template"
+                                     [cellTemplate]="right_cell_Template">
+        </lib-table-responsive-column>
 
-Run `ng test responsive-table` to execute the unit tests via [Karma](https://karma-runner.github.io).
+      </lib-table-responsive>
+````
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Build & compile
+[install_build.md](install_build.md)
