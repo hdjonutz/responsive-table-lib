@@ -1,5 +1,5 @@
 {
-  "name": "table-responsive",
+  "name": "@dihariga/table-responsive",
   "version": "1.1.1",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
@@ -21,5 +21,30 @@
       "esm": "./esm2022/table-responsive.mjs",
       "default": "./fesm2022/table-responsive.mjs"
     }
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdjonutz/responsive-table-lib.git"
+  },
+  "keywords": [
+    "table",
+    "responsive",
+    "angular",
+    "filter",
+    "sort"
+  ],
+  "author": "Daniel Hariga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hdjonutz/responsive-table-lib/issues"
+  },
+  "homepage": "https://github.com/hdjonutz/responsive-table-lib#readme"
 }
