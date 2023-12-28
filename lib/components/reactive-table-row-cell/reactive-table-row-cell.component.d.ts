@@ -22,6 +22,8 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges,
     onClickRow: EventEmitter<{
         row: any;
         item: any;
+        index: number;
+        key: string;
     }>;
     onChangePositionRows: EventEmitter<{
         [key: string]: string | number;
@@ -37,10 +39,9 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges,
         [key: string]: any;
     }, cell: {
         [key: string]: any;
-    }, index: number): void;
+    }, index: number, key: string): void;
     ngOnChanges(changes: SimpleChanges): void;
     drop(event: CdkDragDrop<string[]>): void;
-    printV(a: any, b?: any, value?: any): void;
     getIsExpanded(row: {
         [key: string]: any;
     }): boolean;

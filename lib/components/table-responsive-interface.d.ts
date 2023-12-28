@@ -9,7 +9,6 @@ export declare enum SelectionType {
 }
 export interface IResponsiveTableConfig {
     showCheckHeader: boolean;
-    onSelectRow: Function;
     displayTableName: boolean;
     displayFooter: boolean;
     headerHeight?: number;

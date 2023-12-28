@@ -69,7 +69,7 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     }>): void;
     onHeaderSelect(event: any): void;
     onBodyPage(event: any): void;
-    onSelectRow(row: {
+    onSelectRow(rowKeyValuesIndex: {
         [key: string]: any;
     }): void;
     onBodyScroll(event: any): void;
