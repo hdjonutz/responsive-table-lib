@@ -1,6 +1,7 @@
 import { EventEmitter, OnChanges, OnInit, QueryList, SimpleChanges } from '@angular/core';
 import { IResponsiveTableConfig, IStates, SelectionType } from "./table-responsive-interface";
 import { DataTableColumnDirective } from "../directive/column/column.directive";
+import { DatatableRowDetailDirective } from "../directive/row-detail/row-detail.directive";
 import * as i0 from "@angular/core";
 export declare class TableResponsiveComponent implements OnInit, OnChanges {
     protected selectionType: SelectionType;
@@ -23,11 +24,6 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
         direction: IStates;
     }>;
     pageSize: number;
-    rowDetail: {
-        keyIndex: string;
-        show: boolean;
-        row: any;
-    };
     rowClass: {
         keyIndex: string;
         className: boolean;
@@ -40,6 +36,7 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     selected: Array<any>;
     droggableColumns: boolean;
     droggableRows: boolean;
+    activate: EventEmitter<any>;
     refreshProp: EventEmitter<any>;
     addItemProp: EventEmitter<any>;
     onChangePositionRows: EventEmitter<Array<{
@@ -54,6 +51,7 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
      * if described in your markup.
      */
     set columnTemplates(val: QueryList<DataTableColumnDirective>);
+    rowDetail: DatatableRowDetailDirective;
     /**
      * Returns the column templates.
      */
@@ -71,9 +69,11 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     }>): void;
     onHeaderSelect(event: any): void;
     onBodyPage(event: any): void;
-    onBodySelect(event: any): void;
+    onSelectRow(row: {
+        [key: string]: any;
+    }): void;
     onBodyScroll(event: any): void;
     onFooterPage(event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TableResponsiveComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TableResponsiveComponent, "lib-table-responsive", never, { "rows": { "alias": "rows"; "required": false; }; "config": { "alias": "config"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "droggableColumns": { "alias": "droggableColumns"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; }, { "refreshProp": "refreshProp"; "addItemProp": "addItemProp"; "onChangePositionRows": "onChangePositionRows"; }, ["columnTemplates"], never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TableResponsiveComponent, "lib-table-responsive", never, { "rows": { "alias": "rows"; "required": false; }; "config": { "alias": "config"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "droggableColumns": { "alias": "droggableColumns"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; }, { "activate": "activate"; "refreshProp": "refreshProp"; "addItemProp": "addItemProp"; "onChangePositionRows": "onChangePositionRows"; }, ["rowDetail", "columnTemplates"], never, false, never>;
 }

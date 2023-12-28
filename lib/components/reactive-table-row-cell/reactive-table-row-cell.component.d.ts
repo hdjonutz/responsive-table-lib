@@ -1,15 +1,24 @@
-import { ElementRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { IResponsiveTableConfig } from "../table-responsive-interface";
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { DatatableRowDetailDirective } from "../../directive/row-detail/row-detail.directive";
+import { RowsService } from "../../services/rows.service";
+import { Subscription } from "rxjs";
 import * as i0 from "@angular/core";
-export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges {
+export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges, OnDestroy {
+    private rowService;
     rowClickIndex: number;
+    rowsExpanded: Array<{
+        [key: string]: any;
+    }>;
+    rowsObs: Subscription;
     data: Array<{
         [key: string]: string | number;
     }>;
     columns: Array<any>;
     config: IResponsiveTableConfig;
     droggableRows: boolean;
+    rowDetail: DatatableRowDetailDirective;
     onClickRow: EventEmitter<{
         row: any;
         item: any;
@@ -21,9 +30,9 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges 
     dataToDisplay: Array<{
         [key: string]: any;
     }>;
-    cellContext: any;
-    constructor(tableBody: ElementRef);
+    constructor(tableBody: ElementRef, rowService: RowsService);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     updateOnClickRow(row: {
         [key: string]: any;
     }, cell: {
@@ -32,6 +41,9 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges 
     ngOnChanges(changes: SimpleChanges): void;
     drop(event: CdkDragDrop<string[]>): void;
     printV(a: any, b?: any, value?: any): void;
+    getIsExpanded(row: {
+        [key: string]: any;
+    }): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReactiveTableRowCellComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReactiveTableRowCellComponent, "app-reactive-table-row-cell", never, { "data": { "alias": "data"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "config": { "alias": "config"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; }, { "onClickRow": "onClickRow"; "onChangePositionRows": "onChangePositionRows"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReactiveTableRowCellComponent, "app-reactive-table-row-cell", never, { "data": { "alias": "data"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "config": { "alias": "config"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; "rowDetail": { "alias": "rowDetail"; "required": false; }; }, { "onClickRow": "onClickRow"; "onChangePositionRows": "onChangePositionRows"; }, never, never, false, never>;
 }

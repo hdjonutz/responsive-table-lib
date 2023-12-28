@@ -1,5 +1,6 @@
 import { EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IResponsiveTableConfig } from "../table-responsive-interface";
+import { DatatableRowDetailDirective } from "../../directive/row-detail/row-detail.directive";
 import * as i0 from "@angular/core";
 export declare class TableBodyComponent implements OnInit, OnChanges {
     config: IResponsiveTableConfig;
@@ -11,11 +12,7 @@ export declare class TableBodyComponent implements OnInit, OnChanges {
     rowHeight: number;
     rowCount: string;
     pageSize: number;
-    rowDetail: {
-        keyIndex: string;
-        show: boolean;
-        row: any;
-    };
+    rowDetail: DatatableRowDetailDirective;
     rowClass: {
         keyIndex: string;
         className: boolean;

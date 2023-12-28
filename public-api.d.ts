@@ -5,3 +5,5 @@ export * from './lib/table-responsive.module';
 export * from './lib/directive/column/column.directive';
 export * from './lib/directive/column/column-cell.directive';
 export * from './lib/directive/column/column-header.directive';
+export * from './lib/directive/row-detail/row-detail.directive';
+export * from './lib/directive/row-detail/row-detail-template.directive';
