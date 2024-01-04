@@ -1,5 +1,5 @@
 import { EventEmitter, OnChanges, OnInit, QueryList, SimpleChanges } from '@angular/core';
-import { IResponsiveTableConfig, IStates, SelectionType } from "./table-responsive-interface";
+import { IResponsiveTableConfig, IStates, ITypes, SelectionType } from "./table-responsive-interface";
 import { DataTableColumnDirective } from "../directive/column/column.directive";
 import { DatatableRowDetailDirective } from "../directive/row-detail/row-detail.directive";
 import * as i0 from "@angular/core";
@@ -22,6 +22,7 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     sortHeader: Array<{
         key: string;
         direction: IStates;
+        type: ITypes;
     }>;
     pageSize: number;
     rowClass: {
@@ -59,10 +60,12 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     updateFilterInput(keyFilter: {
         value: string;
         key: string;
+        type: string;
     }): void;
     sortColumnFilterInput(sort: {
         direction: IStates;
         key: string;
+        type: ITypes;
     }): void;
     positionRowsChanged(data: Array<{
         [key: string]: any;

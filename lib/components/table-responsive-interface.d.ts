@@ -3,6 +3,10 @@ export declare enum IStates {
     BiggerToSmaller = 1,
     Nothing = 2
 }
+export declare enum ITypes {
+    string = "string",
+    number = "number"
+}
 export declare enum SelectionType {
     multi = "multi",
     simple = "simple"
