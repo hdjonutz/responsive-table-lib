@@ -17,7 +17,9 @@ export interface IResponsiveTableConfig {
     displayFooter: boolean;
     headerHeight?: number;
     footerHeight?: number;
-    rowHeight: number;
+    rowHeight?: number;
+    rowMinHeight?: number;
+    rowMaxHeight?: number;
     showLoading: boolean;
     scrollV: boolean;
     scrollH: boolean;

@@ -42,6 +42,12 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges,
     }, index: number, key: string): void;
     ngOnChanges(changes: SimpleChanges): void;
     drop(event: CdkDragDrop<string[]>): void;
+    getRowHeight(row: {
+        [key: string]: any;
+    }): any;
+    getCellWidth(att: {
+        [key: string]: any;
+    }): any;
     getIsExpanded(row: {
         [key: string]: any;
     }): boolean;

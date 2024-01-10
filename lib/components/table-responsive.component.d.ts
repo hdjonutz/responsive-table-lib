@@ -57,7 +57,7 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
      * Returns the column templates.
      */
     get columnTemplates(): QueryList<DataTableColumnDirective>;
-    updateFilterInput(keyFilter: {
+    updateFilterInput(keyFilter?: {
         value: string;
         key: string;
         type: string;

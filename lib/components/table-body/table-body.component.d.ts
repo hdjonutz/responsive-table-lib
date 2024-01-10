@@ -9,7 +9,6 @@ export declare class TableBodyComponent implements OnInit, OnChanges {
     scrollbarV: boolean;
     scrollbarH: boolean;
     loadingIndicator: boolean;
-    rowHeight: number;
     rowCount: string;
     pageSize: number;
     rowDetail: DatatableRowDetailDirective;
@@ -31,5 +30,5 @@ export declare class TableBodyComponent implements OnInit, OnChanges {
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TableBodyComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TableBodyComponent, "app-table-body", never, { "config": { "alias": "config"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "rows": { "alias": "rows"; "required": false; }; "scrollbarV": { "alias": "scrollbarV"; "required": false; }; "scrollbarH": { "alias": "scrollbarH"; "required": false; }; "loadingIndicator": { "alias": "loadingIndicator"; "required": false; }; "rowHeight": { "alias": "rowHeight"; "required": false; }; "rowCount": { "alias": "rowCount"; "required": false; }; "pageSize": { "alias": "pageSize"; "required": false; }; "rowDetail": { "alias": "rowDetail"; "required": false; }; "rowClass": { "alias": "rowClass"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; }, { "page": "page"; "select": "select"; "onChangePositionRows": "onChangePositionRows"; "scroll": "scroll"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TableBodyComponent, "app-table-body", never, { "config": { "alias": "config"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "rows": { "alias": "rows"; "required": false; }; "scrollbarV": { "alias": "scrollbarV"; "required": false; }; "scrollbarH": { "alias": "scrollbarH"; "required": false; }; "loadingIndicator": { "alias": "loadingIndicator"; "required": false; }; "rowCount": { "alias": "rowCount"; "required": false; }; "pageSize": { "alias": "pageSize"; "required": false; }; "rowDetail": { "alias": "rowDetail"; "required": false; }; "rowClass": { "alias": "rowClass"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; }, { "page": "page"; "select": "select"; "onChangePositionRows": "onChangePositionRows"; "scroll": "scroll"; }, never, never, false, never>;
 }
