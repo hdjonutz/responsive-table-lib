@@ -51,6 +51,7 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges,
     getIsExpanded(row: {
         [key: string]: any;
     }): boolean;
+    stopOnMoved(event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReactiveTableRowCellComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ReactiveTableRowCellComponent, "app-reactive-table-row-cell", never, { "data": { "alias": "data"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "config": { "alias": "config"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; "rowDetail": { "alias": "rowDetail"; "required": false; }; }, { "onClickRow": "onClickRow"; "onChangePositionRows": "onChangePositionRows"; }, never, never, false, never>;
 }
