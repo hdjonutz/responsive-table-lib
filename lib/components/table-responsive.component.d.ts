@@ -37,6 +37,9 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     selected: Array<any>;
     droggableColumns: boolean;
     droggableRows: boolean;
+    externalFilters: {
+        [key: string]: any;
+    };
     activate: EventEmitter<any>;
     refreshProp: EventEmitter<any>;
     addItemProp: EventEmitter<any>;
@@ -78,5 +81,5 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     onBodyScroll(event: any): void;
     onFooterPage(event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TableResponsiveComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TableResponsiveComponent, "lib-table-responsive", never, { "rows": { "alias": "rows"; "required": false; }; "config": { "alias": "config"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "droggableColumns": { "alias": "droggableColumns"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; }, { "activate": "activate"; "refreshProp": "refreshProp"; "addItemProp": "addItemProp"; "onChangePositionRows": "onChangePositionRows"; }, ["rowDetail", "columnTemplates"], never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TableResponsiveComponent, "lib-table-responsive", never, { "rows": { "alias": "rows"; "required": false; }; "config": { "alias": "config"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "droggableColumns": { "alias": "droggableColumns"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; "externalFilters": { "alias": "externalFilters"; "required": false; }; }, { "activate": "activate"; "refreshProp": "refreshProp"; "addItemProp": "addItemProp"; "onChangePositionRows": "onChangePositionRows"; }, ["rowDetail", "columnTemplates"], never, false, never>;
 }
