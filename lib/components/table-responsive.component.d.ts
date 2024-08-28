@@ -18,6 +18,7 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     filterHeader: Array<{
         key: string;
         value: string;
+        type: string;
     }>;
     sortHeader: Array<{
         key: string;

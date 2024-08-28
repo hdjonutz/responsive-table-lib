@@ -467,13 +467,17 @@ class TableResponsiveComponent {
                 this.filterHeader[foundIndex].value = keyFilter.value;
             }
             else {
-                this.filterHeader.push({ key: keyFilter.key, value: keyFilter.value });
+                this.filterHeader.push({ key: keyFilter.key, value: keyFilter.value, type: keyFilter.type });
             }
         }
         this.tabledata = this.rows;
         if (this.tabledata) {
             this.filterHeader.forEach((keyValFilter) => {
-                this.tabledata = this.tabledata.filter((o) => (o[keyValFilter.key] + '').toLowerCase().indexOf((keyValFilter.value + '').toLowerCase()) >= 0);
+                this.tabledata = this.tabledata.filter((o) => {
+                    let _key = o[keyValFilter.key] + ['DATE', 'DATETIME', 'TIME'].indexOf(keyValFilter.key) >= 0 ? '_toDisplay' : '';
+                    _key = o[_key] || o[keyValFilter.key];
+                    return (_key + '').toLowerCase().indexOf((keyValFilter.value + '').toLowerCase()) >= 0;
+                });
             });
         }
         this.tabledataFiltered = this.tabledata;
