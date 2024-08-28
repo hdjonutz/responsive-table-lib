@@ -479,9 +479,9 @@ class TableResponsiveComponent {
             debugger;
             this.filterHeader.forEach((keyValFilter) => {
                 this.tabledata = this.tabledata.filter((o) => {
-                    let _key = o[keyValFilter.key] + ['DATE', 'DATETIME', 'TIME'].indexOf(keyValFilter.key) >= 0 ? '_toDisplay' : '';
-                    _key = o[_key] || o[keyValFilter.key];
-                    return (_key + '').toLowerCase().indexOf((keyValFilter.value + '').toLowerCase()) >= 0;
+                    let _key = keyValFilter.key + (['DATE', 'DATETIME', 'TIME'].indexOf(keyValFilter.type) >= 0 ? '_toDisplay' : '');
+                    const value = o[_key] || o[keyValFilter.key];
+                    return (value + '').toLowerCase().indexOf((keyValFilter.value + '').toLowerCase()) >= 0;
                 });
             });
         }
