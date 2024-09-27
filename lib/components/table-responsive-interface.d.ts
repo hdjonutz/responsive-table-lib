@@ -26,4 +26,9 @@ export interface IResponsiveTableConfig {
     language: string;
     messageTableNoData: string;
     selectionType: SelectionType;
+    defaultSorting?: Array<{
+        key: string;
+        direction: IStates;
+        type: ITypes;
+    }>;
 }
