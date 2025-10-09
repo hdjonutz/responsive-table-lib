@@ -1,4 +1,4 @@
-import { ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { IResponsiveTableConfig } from "../table-responsive-interface";
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { DatatableRowDetailDirective } from "../../directive/row-detail/row-detail.directive";
@@ -7,6 +7,7 @@ import { Subscription } from "rxjs";
 import * as i0 from "@angular/core";
 export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges, OnDestroy {
     private rowService;
+    private cdr;
     rowClickIndex: number;
     rowsExpanded: Array<{
         [key: string]: any;
@@ -32,7 +33,7 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges,
     dataToDisplay: Array<{
         [key: string]: any;
     }>;
-    constructor(tableBody: ElementRef, rowService: RowsService);
+    constructor(tableBody: ElementRef, rowService: RowsService, cdr: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     updateOnClickRow(row: {

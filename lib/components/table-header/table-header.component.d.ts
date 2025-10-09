@@ -14,6 +14,7 @@ export declare class TableHeaderComponent implements OnInit, AfterViewInit {
     allRowsSelected: Array<any>;
     selectionType: 'simple' | 'multi';
     droggableColumns: boolean;
+    droggableRows: boolean;
     config: IResponsiveTableConfig;
     select: EventEmitter<any>;
     onInputTextKey: EventEmitter<any>;
@@ -27,5 +28,5 @@ export declare class TableHeaderComponent implements OnInit, AfterViewInit {
     changeTo(nameAction: IStates, key: string, type: ITypes): void;
     updateFilterText(event: KeyboardEvent, key: string, format: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TableHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TableHeaderComponent, "app-table-header", never, { "columns": { "alias": "columns"; "required": false; }; "headerHeight": { "alias": "headerHeight"; "required": false; }; "allRowsSelected": { "alias": "allRowsSelected"; "required": false; }; "selectionType": { "alias": "selectionType"; "required": false; }; "droggableColumns": { "alias": "droggableColumns"; "required": false; }; "config": { "alias": "config"; "required": false; }; }, { "select": "select"; "onInputTextKey": "onInputTextKey"; "onInputSortKey": "onInputSortKey"; "addItem": "addItem"; "refresh": "refresh"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TableHeaderComponent, "app-table-header", never, { "columns": { "alias": "columns"; "required": false; }; "headerHeight": { "alias": "headerHeight"; "required": false; }; "allRowsSelected": { "alias": "allRowsSelected"; "required": false; }; "selectionType": { "alias": "selectionType"; "required": false; }; "droggableColumns": { "alias": "droggableColumns"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; "config": { "alias": "config"; "required": false; }; }, { "select": "select"; "onInputTextKey": "onInputTextKey"; "onInputSortKey": "onInputSortKey"; "addItem": "addItem"; "refresh": "refresh"; }, never, never, false, never>;
 }

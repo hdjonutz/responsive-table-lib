@@ -3,6 +3,11 @@ import { IResponsiveTableConfig, IStates, ITypes, SelectionType } from "./table-
 import { DataTableColumnDirective } from "../directive/column/column.directive";
 import { DatatableRowDetailDirective } from "../directive/row-detail/row-detail.directive";
 import * as i0 from "@angular/core";
+interface ISortHeader {
+    key: string;
+    direction: IStates;
+    type: ITypes;
+}
 export declare class TableResponsiveComponent implements OnInit, OnChanges {
     protected selectionType: SelectionType;
     _internalColumns: Array<any>;
@@ -20,11 +25,7 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
         value: string;
         type: string;
     }>;
-    sortHeader: Array<{
-        key: string;
-        direction: IStates;
-        type: ITypes;
-    }>;
+    sortHeader: Array<ISortHeader>;
     pageSize: number;
     rowClass: {
         keyIndex: string;
@@ -66,6 +67,11 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
         key: string;
         type: string;
     }): void;
+    resetFiltersAndSortColumnFilterInput(sort: {
+        direction: IStates;
+        key: string;
+        type: ITypes;
+    }): void;
     sortColumnFilterInput(sort: {
         direction: IStates;
         key: string;
@@ -84,3 +90,4 @@ export declare class TableResponsiveComponent implements OnInit, OnChanges {
     static ɵfac: i0.ɵɵFactoryDeclaration<TableResponsiveComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TableResponsiveComponent, "lib-table-responsive", never, { "rows": { "alias": "rows"; "required": false; }; "config": { "alias": "config"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "droggableColumns": { "alias": "droggableColumns"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; "externalFilters": { "alias": "externalFilters"; "required": false; }; }, { "activate": "activate"; "refreshProp": "refreshProp"; "addItemProp": "addItemProp"; "onChangePositionRows": "onChangePositionRows"; }, ["rowDetail", "columnTemplates"], never, false, never>;
 }
+export {};
