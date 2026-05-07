@@ -29,6 +29,7 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges,
     onChangePositionRows: EventEmitter<{
         [key: string]: string | number;
     }[]>;
+    virtualScroll: boolean;
     _tableBody: ElementRef;
     dataToDisplay: Array<{
         [key: string]: any;
@@ -46,6 +47,7 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges,
     getRowHeight(row: {
         [key: string]: any;
     }): any;
+    get rowHeight(): number;
     getCellWidth(att: {
         [key: string]: any;
     }): any;
@@ -53,6 +55,7 @@ export declare class ReactiveTableRowCellComponent implements OnInit, OnChanges,
         [key: string]: any;
     }): boolean;
     stopOnMoved(event: any): void;
+    trackByFn(index: number, item: any): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReactiveTableRowCellComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReactiveTableRowCellComponent, "app-reactive-table-row-cell", never, { "data": { "alias": "data"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "config": { "alias": "config"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; "rowDetail": { "alias": "rowDetail"; "required": false; }; }, { "onClickRow": "onClickRow"; "onChangePositionRows": "onChangePositionRows"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReactiveTableRowCellComponent, "app-reactive-table-row-cell", never, { "data": { "alias": "data"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "config": { "alias": "config"; "required": false; }; "droggableRows": { "alias": "droggableRows"; "required": false; }; "rowDetail": { "alias": "rowDetail"; "required": false; }; "virtualScroll": { "alias": "virtualScroll"; "required": false; }; }, { "onClickRow": "onClickRow"; "onChangePositionRows": "onChangePositionRows"; }, never, never, false, never>;
 }
